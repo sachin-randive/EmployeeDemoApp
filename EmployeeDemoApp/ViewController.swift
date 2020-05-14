@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    fileprivate var model = EmployeeViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print(TTAppConfig().employee)
+        model.getEmployeeList()
     }
-
-
 }
 
