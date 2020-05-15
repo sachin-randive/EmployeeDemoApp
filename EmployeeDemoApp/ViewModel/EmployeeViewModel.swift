@@ -12,6 +12,7 @@ import UIKit
 protocol EmployeeViewModelProtocal {
     func didUpdateData()
     func didErrorDisplay()
+    func deleteRecordRespoce(msg:String)
 }
 
 class EmployeeViewModel: NSObject {
@@ -19,8 +20,8 @@ class EmployeeViewModel: NSObject {
     var listOfEmployees : [Data]  = [Data]()
     
     //MARK: - getEmployeeList Methods
-    func getEmployeeList() {
-        ServiceManager.shared.getEmployeeDetails(urlString: EEAppConfig().employee, completionHandler: { (result: Result<DataModel?, NetworkError>) in
+    func getEmployeeList(urlString: String) {
+        ServiceManager.shared.getEmployeeDetails(urlString: urlString, completionHandler: { (result: Result<DataModel?, NetworkError>) in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
@@ -30,6 +31,25 @@ class EmployeeViewModel: NSObject {
                     }
                     self.listOfEmployees = response.data
                     self.delegate?.didUpdateData()
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
+    }
+    
+    // MARk:- Delete Record Call
+    func deleteSingleEmployeeRecord(urlString: String) {
+        ServiceManager.shared.deleteEmployeeDetails(urlString: urlString, completionHandler: { (result: Result<DeleteRecordModel?, NetworkError>) in
+            switch result {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    guard let response = response  else {
+                        self.delegate?.didErrorDisplay()
+                        return
+                    }
+                    self.delegate?.deleteRecordRespoce(msg: response.message!)
                 }
                 
             case .failure(let error):

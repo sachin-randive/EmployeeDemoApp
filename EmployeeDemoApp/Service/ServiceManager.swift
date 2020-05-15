@@ -30,7 +30,34 @@ class ServiceManager {
                     completionHandler(.failure(.badError))
                 }
             }
-        }.resume()
+            }.resume()
+    }
+    
+    // MARK - Delete API Call
+    func deleteEmployeeDetails<T: Decodable> (urlString:String, completionHandler: @escaping(Result<T,NetworkError>) -> ()) {
+        guard let serviceURL = URL(string: urlString) else {
+            completionHandler(.failure(.badError))
+            return
+        }
+        var request = URLRequest(url: serviceURL)
+        request.httpMethod = EEAppConfig.delete
+        request.addValue(EEAppConfig.applicationJson, forHTTPHeaderField: EEAppConfig.contentType)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let err = error {
+                completionHandler(.failure(.badError))
+                print(err.localizedDescription)
+            } else {
+                guard let data = data else { return }
+                let jsonString = String(decoding: data, as: UTF8.self)
+                do {
+                    let results = try JSONDecoder().decode(T.self, from: jsonString.data(using: .utf8)!)
+                    completionHandler(.success(results))
+                } catch {
+                    print(error.localizedDescription)
+                    completionHandler(.failure(.badError))
+                }
+            }
+            }.resume()
     }
 }
 

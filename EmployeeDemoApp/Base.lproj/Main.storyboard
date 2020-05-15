@@ -8,35 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Employee List Controller-->
-        <scene sceneID="f9v-1y-Cb6">
-            <objects>
-                <tableViewController id="Yta-KL-XdB" customClass="EmployeeListController" customModule="EmployeeDemoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="reuseIdentifier" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cIS-OT-X0y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Q9c-yT-6wL">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q9c-yT-6wL" id="Exa-iT-bQ5">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Yta-KL-XdB" id="2b1-gj-47C"/>
-                            <outlet property="delegate" destination="Yta-KL-XdB" id="UAx-li-VtQ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gak-Xh-Oh4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3058" y="90"/>
-        </scene>
-        <!--Employee List View Controller-->
+        <!--Employee_List-->
         <scene sceneID="lRe-yN-LWg">
             <objects>
                 <viewController id="YQ8-wR-tI1" customClass="EmployeeListViewController" customModule="EmployeeDemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,7 +90,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pPN-5c-rdV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CLH-kh-nYF"/>
+                    <navigationItem key="navigationItem" title="Employee_List" id="QZg-yU-swi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lPt-P3-p5a">
+                            <connections>
+                                <segue destination="kKK-X0-Ru6" kind="show" id="qq1-R6-pnI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableviewOfEmployeeList" destination="uyW-lm-Xhw" id="QPh-rv-Law"/>
                     </connections>
@@ -126,6 +104,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dp0-di-0So" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1271.0144927536232" y="-57.589285714285708"/>
+        </scene>
+        <!--Add New -->
+        <scene sceneID="DN5-OP-UkV">
+            <objects>
+                <viewController id="kKK-X0-Ru6" customClass="AddNewEmployeeViewController" customModule="EmployeeDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fj6-nr-eo3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Srd-lu-niE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add New " id="80T-cn-nwT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hw6-QO-xTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-381" y="-51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zhp-rQ-m0n">
