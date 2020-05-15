@@ -29,7 +29,6 @@ class ServiceManager {
                     print(error.localizedDescription)
                     completionHandler(.failure(.badError))
                 }
-                
             }
         }.resume()
     }

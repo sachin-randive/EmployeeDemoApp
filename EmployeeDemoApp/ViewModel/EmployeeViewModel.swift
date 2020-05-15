@@ -16,11 +16,11 @@ protocol EmployeeViewModelProtocal {
 
 class EmployeeViewModel: NSObject {
     var delegate: EmployeeViewModelProtocal?
-    var listOfArray : [Data]  = [Data]()
+    var listOfEmployees : [Data]  = [Data]()
     
     //MARK: - getEmployeeList Methods
     func getEmployeeList() {
-        ServiceManager.shared.getEmployeeDetails(urlString: TTAppConfig().employee, completionHandler: { (result: Result<DataModel?, NetworkError>) in
+        ServiceManager.shared.getEmployeeDetails(urlString: EEAppConfig().employee, completionHandler: { (result: Result<DataModel?, NetworkError>) in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
@@ -28,7 +28,7 @@ class EmployeeViewModel: NSObject {
                         self.delegate?.didErrorDisplay()
                         return
                     }
-                    self.listOfArray = response.data
+                    self.listOfEmployees = response.data
                     self.delegate?.didUpdateData()
                 }
                 

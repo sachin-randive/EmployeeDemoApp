@@ -8,11 +8,13 @@
 
 import Foundation
 
-struct TTAppConfig {
+struct EEAppConfig {
     // Comman Base URL
     private  let authoriseBaseURL = "http://dummy.restapiexample.com/api/v1/"
     // Employee URL String
     var employee: String {
         return authoriseBaseURL + "employees"
     }
+    
+     static let cellIdentifier = "employeeListCell"
 }
