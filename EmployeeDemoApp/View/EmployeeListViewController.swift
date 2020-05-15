@@ -9,24 +9,19 @@
 import UIKit
 
 class EmployeeListViewController: UIViewController {
-    
     fileprivate let model = EmployeeViewModel()
     @IBOutlet weak var tableviewOfEmployeeList: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.employeeListTable.register(listTableCell.self, forCellReuseIdentifier: EEAppConfig.cellIdentifier)
         model.delegate = self
         model.getEmployeeList()
-        print(EEAppConfig.cellIdentifier)
-      
     }
 }
 
 // MARK: - Delegate and DataSource Methods
 extension EmployeeListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // guard let cell = tableView.dequeueReusableCell(withIdentifier: EEAppConfig.cellIdentifier, for: indexPath) as? TableCellOfEmployeeList else { return TableCellOfEmployeeList() }
         let cell  = tableView.dequeueReusableCell(withIdentifier: EEAppConfig.cellIdentifier) as! listTableCell
         cell.accessibilityIdentifier = "myCell_\(indexPath.row)"
         let ListCurrentItem = model.listOfEmployees[indexPath.row]
