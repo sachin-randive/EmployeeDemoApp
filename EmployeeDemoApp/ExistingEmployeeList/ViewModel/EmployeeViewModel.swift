@@ -18,6 +18,15 @@ protocol EmployeeViewModelProtocal {
 class EmployeeViewModel: NSObject {
     var delegate: EmployeeViewModelProtocal?
     var listOfEmployees : [Data]  = [Data]()
+    var filteredEmployeeData = [Data]()
+    
+    //MARK:- Filter Logic on searchbar
+    func filterSelectedEmployee(for searchText: String, completionHandler: @escaping ()-> Void) {
+        filteredEmployeeData = listOfEmployees.filter { filteredList in
+            return filteredList.employeeName.lowercased().contains(searchText.lowercased())
+        }
+        completionHandler()
+    }
     
     //MARK: - getEmployeeList Methods
     func getEmployeeList(urlString: String) {
@@ -39,7 +48,7 @@ class EmployeeViewModel: NSObject {
         })
     }
     
-    // MARk:- Delete Record Call
+    // MARK:- Delete Record Call
     func deleteSingleEmployeeRecord(urlString: String) {
         ServiceManager.shared.deleteEmployeeDetails(urlString: urlString, completionHandler: { (result: Result<DeleteRecordModel?, NetworkError>) in
             switch result {

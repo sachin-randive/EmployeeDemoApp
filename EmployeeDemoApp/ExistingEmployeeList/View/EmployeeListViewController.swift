@@ -14,7 +14,6 @@ class EmployeeListViewController: UIViewController {
     
     //MARK: - Parameters
     fileprivate let model = EmployeeViewModel()
-    var filteredEmployeeData = [Data]()
     var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
@@ -36,23 +35,16 @@ class EmployeeListViewController: UIViewController {
         // Reload the table
         tableviewOfEmployeeList.reloadData()
     }
-    // Fileter Logic on searchbar
-    private func filterSelectedEmployee(for searchText: String) {
-        filteredEmployeeData = model.listOfEmployees.filter { filteredList in
-            return filteredList.employeeName.lowercased().contains(searchText.lowercased())
-        }
-        tableviewOfEmployeeList.reloadData()
-    }
 }
 
 // MARK: - Delegate and DataSource Methods
 extension EmployeeListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell  = tableView.dequeueReusableCell(withIdentifier: EEAppConfig.cellIdentifier) as! listTableCell
+        let cell  = tableView.dequeueReusableCell(withIdentifier: EEConstants.cellIdentifier) as! listTableCell
         cell.accessibilityIdentifier = "myCell_\(indexPath.row)"
         let employeeData: Data
         if resultSearchController.isActive && resultSearchController.searchBar.text != "" {
-            employeeData = filteredEmployeeData[indexPath.row]
+            employeeData = model.filteredEmployeeData[indexPath.row]
         } else {
             employeeData = model.listOfEmployees[indexPath.row]
         }
@@ -66,7 +58,7 @@ extension EmployeeListViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if  (resultSearchController.isActive) {
-            return filteredEmployeeData.count
+            return model.filteredEmployeeData.count
         } else {
             return model.listOfEmployees.count
         }
@@ -110,7 +102,9 @@ extension EmployeeListViewController: EmployeeViewModelProtocal {
 // MARK: - UISearchResultsUpdating Delegate
 extension EmployeeListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        filterSelectedEmployee(for: searchController.searchBar.text ?? "")
+        model.filterSelectedEmployee(for: searchController.searchBar.text ?? "", completionHandler: {
+            self.tableviewOfEmployeeList.reloadData()
+        })
     }
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DeleteRecordModel: Decodable {
+struct DeleteRecordModel: Codable {
     let status: String?
     let message:String?
 }

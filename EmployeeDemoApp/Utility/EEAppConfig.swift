@@ -15,14 +15,8 @@ struct EEAppConfig {
     var employee: String {
         return authoriseBaseURL + "employees"
     }
-    
+    // Delete Employee
     var deleteEmployeeRecord: String {
         return authoriseBaseURL + "delete/"
     }
-    
-    static let cellIdentifier = "employeeListCell"
-    static let applicationJson = "application/json"
-    static let contentType = "Content-Type"
-    static let post = "POST"
-    static let delete = "DELETE"
 }

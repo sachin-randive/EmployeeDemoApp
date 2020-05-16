@@ -9,13 +9,13 @@
 import Foundation
 
 // MARK: - DataModel
-struct DataModel: Decodable {
+struct DataModel: Codable {
     let status: String
     let data: [Data]
 }
 
 // MARK: - Datum
-struct Data: Decodable {
+struct Data: Codable {
     let id, employeeName, employeeSalary, employeeAge: String
     let profileImage: String
     
