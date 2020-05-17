@@ -23,6 +23,8 @@ class EmployeeListViewController: UIViewController {
         model.delegate = self
         reloadDelegate.addDelegate = self
         model.getEmployeeList(urlString: EEAppConfig().employee)
+        self.showSpinner(onView: self.view)
+        tableviewOfEmployeeList.accessibilityIdentifier = "table--tableviewOfEmployeeList"
         initialiseSearchController()
     }
     func initialiseSearchController() {
@@ -82,6 +84,7 @@ extension EmployeeListViewController: UITableViewDataSource, UITableViewDelegate
         if editingStyle == .delete {
             model.listOfEmployees.remove(at: indexPath.row)
             tableviewOfEmployeeList.deleteRows(at: [indexPath], with: .fade)
+            self.showSpinner(onView: self.view)
             model.deleteSingleEmployeeRecord(urlString: EEAppConfig().deleteEmployeeRecord + model.listOfEmployees[indexPath.row].id)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -92,10 +95,12 @@ extension EmployeeListViewController: UITableViewDataSource, UITableViewDelegate
 // MARK: - Protocal Delegate
 extension EmployeeListViewController: EmployeeViewModelProtocal {
     func deleteRecordRespoce(msg: String) {
+        self.removeSpinner()
         self.alert(message: msg, title: "")
     }
     
     func didUpdateData() {
+        self.removeSpinner()
         tableviewOfEmployeeList.reloadData()
     }
     

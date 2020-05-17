@@ -16,12 +16,14 @@ class AddNewEmployeeViewController: UIViewController {
     @IBOutlet weak var txtEmployeeName: UITextField!
     @IBOutlet weak var txtSalary: UITextField!
     @IBOutlet weak var txtAge: UITextField!
+    @IBOutlet weak var btnSubmit: UIButton!
     
     var addDelegate: AddNewEmployeeViewControllerProtocal?
     fileprivate let employeeViewModel = NewEmployeeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnSubmit.layer.cornerRadius = 10
         employeeViewModel.delegate = self
     }
     
@@ -38,6 +40,7 @@ class AddNewEmployeeViewController: UIViewController {
             self.view.showToast(toastMessage: EEConstants.AgeRequired, duration: 5.0)
             return
         }
+        self.showSpinner(onView: self.view)
         employeeViewModel.postNewEmployeeRecord(urlString: EEAppConfig().AddNewEmployee, parameter: ["name":txtEmployeeName.text!,"salary":txtSalary.text!,"age":txtAge.text!])
     }
 }
@@ -46,6 +49,7 @@ extension AddNewEmployeeViewController: NewEmployeeViewModelProtocal {
     func postRecordRespoce(msg: String) {
         self.popupAlert(title: msg, message:EEConstants.sucessMessage, actionTitles: ["OK"], actions:[{action1 in
             DispatchQueue.main.async {
+                self.removeSpinner()
                 self.addDelegate?.didReloadTableData()
                 self.navigationController?.popViewController(animated: true)
             } }, nil])

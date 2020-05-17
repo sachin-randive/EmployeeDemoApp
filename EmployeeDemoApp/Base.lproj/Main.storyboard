@@ -128,7 +128,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uyW-lm-Xhw" firstAttribute="leading" secondItem="pPN-5c-rdV" secondAttribute="leading" id="Tb3-dQ-zvt"/>
                             <constraint firstItem="uyW-lm-Xhw" firstAttribute="top" secondItem="pPN-5c-rdV" secondAttribute="top" id="W5N-ck-Fhn"/>
@@ -169,7 +169,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bT-9Z-Tpt">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bT-9Z-Tpt">
                                         <rect key="frame" x="0.0" y="39.5" width="394" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="nST-4Z-yLo"/>
@@ -186,7 +186,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Salary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pm8-JJ-daH">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your Salary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pm8-JJ-daH">
                                         <rect key="frame" x="0.0" y="137" width="394" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OTE-kk-UQ6"/>
@@ -203,7 +203,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9y-aa-rTs">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter your Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x9y-aa-rTs">
                                         <rect key="frame" x="0.0" y="234.5" width="394" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Rhi-uu-mqH"/>
@@ -232,7 +232,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Srd-lu-niE" firstAttribute="trailing" secondItem="BFv-gr-O5I" secondAttribute="trailing" constant="10" id="AZX-KV-jni"/>
                             <constraint firstItem="BFv-gr-O5I" firstAttribute="leading" secondItem="Srd-lu-niE" secondAttribute="leading" constant="10" id="DB6-eW-kwb"/>
@@ -244,6 +244,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New " id="80T-cn-nwT"/>
                     <connections>
+                        <outlet property="btnSubmit" destination="i5e-rN-gMx" id="9La-oe-73L"/>
                         <outlet property="txtAge" destination="x9y-aa-rTs" id="CH9-9T-Ixd"/>
                         <outlet property="txtEmployeeName" destination="9bT-9Z-Tpt" id="znO-fB-ZJZ"/>
                         <outlet property="txtSalary" destination="pm8-JJ-daH" id="ERZ-al-MAY"/>

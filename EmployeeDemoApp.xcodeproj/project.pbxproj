@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03049A4124713CA600F38C54 /* EEToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03049A4024713CA600F38C54 /* EEToastMessage.swift */; };
+		03049A4324717F8200F38C54 /* EEGlobalActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03049A4224717F8200F38C54 /* EEGlobalActivityIndicator.swift */; };
 		0304AD00246D57D900664D0F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304ACFF246D57D900664D0F /* DataModel.swift */; };
 		0304AD05246D58CC00664D0F /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304AD04246D58CC00664D0F /* ServiceManager.swift */; };
 		0304AD07246D5B0000664D0F /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304AD06246D5B0000664D0F /* EmployeeViewModel.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		03049A4024713CA600F38C54 /* EEToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEToastMessage.swift; sourceTree = "<group>"; };
+		03049A4224717F8200F38C54 /* EEGlobalActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEGlobalActivityIndicator.swift; sourceTree = "<group>"; };
 		0304ACFF246D57D900664D0F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		0304AD04246D58CC00664D0F /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		0304AD06246D5B0000664D0F /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				0304AD09246D5BFF00664D0F /* EEAppConfig.swift */,
 				0309EF0F246FF49700077357 /* EEConstants.swift */,
 				03049A4024713CA600F38C54 /* EEToastMessage.swift */,
+				03049A4224717F8200F38C54 /* EEGlobalActivityIndicator.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				0309EF192470107800077357 /* NewEmployeeViewModel.swift in Sources */,
 				0313E5B4246E44C1008FD797 /* listTableCell.swift in Sources */,
 				0309EF1B247010B000077357 /* AddEmployeeModel.swift in Sources */,
+				03049A4324717F8200F38C54 /* EEGlobalActivityIndicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
