@@ -14,12 +14,14 @@ class EmployeeListViewController: UIViewController {
     
     //MARK: - Parameters
     fileprivate let model = EmployeeViewModel()
+    var reloadDelegate = AddNewEmployeeViewController()
     var resultSearchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(false, animated: false)
         model.delegate = self
+        reloadDelegate.addDelegate = self
         model.getEmployeeList(urlString: EEAppConfig().employee)
         initialiseSearchController()
     }
@@ -34,6 +36,11 @@ class EmployeeListViewController: UIViewController {
         })()
         // Reload the table
         tableviewOfEmployeeList.reloadData()
+    }
+    @IBAction func AddNewEmployeeRecordAction(_ sender: Any) {
+        let nav = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddNewEmployeeID") as! AddNewEmployeeViewController
+        nav.addDelegate = self
+        self.navigationController?.pushViewController(nav, animated: true)
     }
 }
 
@@ -105,6 +112,11 @@ extension EmployeeListViewController: UISearchResultsUpdating {
         model.filterSelectedEmployee(for: searchController.searchBar.text ?? "", completionHandler: {
             self.tableviewOfEmployeeList.reloadData()
         })
+    }
+}
+extension EmployeeListViewController: AddNewEmployeeViewControllerProtocal {
+    func didReloadTableData() {
+         model.getEmployeeList(urlString: EEAppConfig().employee)
     }
 }
 

@@ -30,7 +30,7 @@ class ServiceManager {
                     completionHandler(.failure(.badError))
                 }
             }
-            }.resume()
+        }.resume()
     }
     
     // MARK - Delete API Call
@@ -57,10 +57,10 @@ class ServiceManager {
                     completionHandler(.failure(.badError))
                 }
             }
-            }.resume()
+        }.resume()
     }
     
-    // MARK - Delete API Call
+    // MARK - Post New data API Call
     func postEmployeeNewDetails<T: Decodable> (urlString:String, parameterDic:[String:String], completionHandler: @escaping(Result<T,NetworkError>) -> ()) {
         guard let serviceURL = URL(string: urlString) else {
             completionHandler(.failure(.badError))

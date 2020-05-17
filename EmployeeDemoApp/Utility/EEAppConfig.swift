@@ -19,4 +19,8 @@ struct EEAppConfig {
     var deleteEmployeeRecord: String {
         return authoriseBaseURL + "delete/"
     }
+    // Add Employee
+    var AddNewEmployee: String {
+        return authoriseBaseURL + "create"
+    }
 }

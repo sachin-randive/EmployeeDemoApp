@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03049A4124713CA600F38C54 /* EEToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03049A4024713CA600F38C54 /* EEToastMessage.swift */; };
 		0304AD00246D57D900664D0F /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304ACFF246D57D900664D0F /* DataModel.swift */; };
 		0304AD05246D58CC00664D0F /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304AD04246D58CC00664D0F /* ServiceManager.swift */; };
 		0304AD07246D5B0000664D0F /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304AD06246D5B0000664D0F /* EmployeeViewModel.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03049A4024713CA600F38C54 /* EEToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EEToastMessage.swift; sourceTree = "<group>"; };
 		0304ACFF246D57D900664D0F /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		0304AD04246D58CC00664D0F /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		0304AD06246D5B0000664D0F /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				0304AD09246D5BFF00664D0F /* EEAppConfig.swift */,
 				0309EF0F246FF49700077357 /* EEConstants.swift */,
+				03049A4024713CA600F38C54 /* EEToastMessage.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				0304AD0C246D8F7300664D0F /* EmployeeListViewController.swift in Sources */,
 				0304AD05246D58CC00664D0F /* ServiceManager.swift in Sources */,
 				03539D52246EA4D300269978 /* DeleteRecordModel.swift in Sources */,
+				03049A4124713CA600F38C54 /* EEToastMessage.swift in Sources */,
 				03539D56246EEB4600269978 /* AddNewEmployeeViewController.swift in Sources */,
 				0309EF10246FF49700077357 /* EEConstants.swift in Sources */,
 				0304AD0A246D5BFF00664D0F /* EEAppConfig.swift in Sources */,

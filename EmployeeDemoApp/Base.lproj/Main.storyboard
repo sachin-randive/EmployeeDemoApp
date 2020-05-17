@@ -39,7 +39,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="OjS-dn-Etm">
-                                                    <rect key="frame" x="87" y="5" width="322" height="129"/>
+                                                    <rect key="frame" x="92" y="5" width="317" height="129"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6lb-Ec-dCE">
                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="129"/>
@@ -71,24 +71,24 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="oBh-5c-Zw2">
-                                                            <rect key="frame" x="70" y="0.0" width="252" height="129"/>
+                                                            <rect key="frame" x="70" y="0.0" width="247" height="129"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyq-3R-k8j">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="252" height="33"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="247" height="33"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KI1-dz-qSW">
-                                                                    <rect key="frame" x="0.0" y="48" width="252" height="33"/>
+                                                                    <rect key="frame" x="0.0" y="48" width="247" height="33"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NPA-Sa-Uan">
-                                                                    <rect key="frame" x="0.0" y="96" width="252" height="33"/>
+                                                                    <rect key="frame" x="0.0" y="96" width="247" height="33"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -104,7 +104,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="OjS-dn-Etm" secondAttribute="trailing" constant="5" id="8sg-TZ-T41"/>
                                                 <constraint firstItem="pSa-1w-Upo" firstAttribute="leading" secondItem="1pO-1u-XpU" secondAttribute="leading" constant="10" id="Btf-i2-Zyr"/>
                                                 <constraint firstAttribute="bottom" secondItem="OjS-dn-Etm" secondAttribute="bottom" constant="5" id="Kgc-IQ-1Z9"/>
-                                                <constraint firstItem="OjS-dn-Etm" firstAttribute="leading" secondItem="2Lr-Bh-HJJ" secondAttribute="trailing" constant="5" id="NtM-ah-PdS"/>
+                                                <constraint firstItem="OjS-dn-Etm" firstAttribute="leading" secondItem="2Lr-Bh-HJJ" secondAttribute="trailing" constant="10" id="NtM-ah-PdS"/>
                                                 <constraint firstItem="pSa-1w-Upo" firstAttribute="top" secondItem="1pO-1u-XpU" secondAttribute="top" constant="2" id="V42-iU-9XN"/>
                                                 <constraint firstItem="2Lr-Bh-HJJ" firstAttribute="leading" secondItem="1pO-1u-XpU" secondAttribute="leadingMargin" constant="2" id="VJT-W1-rVo"/>
                                                 <constraint firstAttribute="bottom" secondItem="pSa-1w-Upo" secondAttribute="bottom" constant="2" id="evr-ze-NqV"/>
@@ -128,7 +128,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uyW-lm-Xhw" firstAttribute="leading" secondItem="pPN-5c-rdV" secondAttribute="leading" id="Tb3-dQ-zvt"/>
                             <constraint firstItem="uyW-lm-Xhw" firstAttribute="top" secondItem="pPN-5c-rdV" secondAttribute="top" id="W5N-ck-Fhn"/>
@@ -140,7 +140,7 @@
                     <navigationItem key="navigationItem" title="Employee_List" id="QZg-yU-swi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lPt-P3-p5a">
                             <connections>
-                                <segue destination="kKK-X0-Ru6" kind="show" id="qq1-R6-pnI"/>
+                                <action selector="AddNewEmployeeRecordAction:" destination="YQ8-wR-tI1" id="sYH-NB-AsD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -155,13 +155,13 @@
         <!--Add New -->
         <scene sceneID="DN5-OP-UkV">
             <objects>
-                <viewController id="kKK-X0-Ru6" customClass="AddNewEmployeeViewController" customModule="EmployeeDemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewEmployeeID" id="kKK-X0-Ru6" customClass="AddNewEmployeeViewController" customModule="EmployeeDemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fj6-nr-eo3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="BFv-gr-O5I">
-                                <rect key="frame" x="10" y="98" width="394" height="274.5"/>
+                                <rect key="frame" x="10" y="54" width="394" height="274.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5B-e2-U45">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="21.5"/>
@@ -176,6 +176,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="kKK-X0-Ru6" id="GR0-OA-mIt"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgG-iO-imI">
                                         <rect key="frame" x="0.0" y="97.5" width="394" height="21.5"/>
@@ -189,7 +192,10 @@
                                             <constraint firstAttribute="height" constant="40" id="OTE-kk-UQ6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="kKK-X0-Ru6" id="lat-1W-PFI"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C73-CT-AQf">
                                         <rect key="frame" x="0.0" y="195" width="394" height="21.5"/>
@@ -203,12 +209,15 @@
                                             <constraint firstAttribute="height" constant="40" id="Rhi-uu-mqH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="kKK-X0-Ru6" id="919-wh-VPM"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5e-rN-gMx">
-                                <rect key="frame" x="107" y="412.5" width="200" height="40"/>
+                                <rect key="frame" x="107" y="368.5" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="0.64865154110000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kLE-EY-OaM"/>
@@ -223,7 +232,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Srd-lu-niE" firstAttribute="trailing" secondItem="BFv-gr-O5I" secondAttribute="trailing" constant="10" id="AZX-KV-jni"/>
                             <constraint firstItem="BFv-gr-O5I" firstAttribute="leading" secondItem="Srd-lu-niE" secondAttribute="leading" constant="10" id="DB6-eW-kwb"/>
@@ -234,6 +243,11 @@
                         <viewLayoutGuide key="safeArea" id="Srd-lu-niE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add New " id="80T-cn-nwT"/>
+                    <connections>
+                        <outlet property="txtAge" destination="x9y-aa-rTs" id="CH9-9T-Ixd"/>
+                        <outlet property="txtEmployeeName" destination="9bT-9Z-Tpt" id="znO-fB-ZJZ"/>
+                        <outlet property="txtSalary" destination="pm8-JJ-daH" id="ERZ-al-MAY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hw6-QO-xTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

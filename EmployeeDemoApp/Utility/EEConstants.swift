@@ -14,4 +14,7 @@ struct EEConstants {
     static let contentType = "Content-Type"
     static let post = "POST"
     static let delete = "DELETE"
+    static let NameRequired = "Alert Your name is required"
+    static let AgeRequired = "Alert Your Age is required"
+    static let SalaryRequired = "Alert Your Salary is required"
 }

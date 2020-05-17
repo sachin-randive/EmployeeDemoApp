@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 protocol NewEmployeeViewModelProtocal {
-     func postRecordRespoce(msg:String)
-     func didErrorDisplay()
+    func postRecordRespoce(msg:String)
+    func didErrorDisplay()
 }
 
 class NewEmployeeViewModel: NSObject {
-      var delegate: NewEmployeeViewModelProtocal?
+    var delegate: NewEmployeeViewModelProtocal?
     
     //MARK: - PostNewEmployeeData Methods
     func postNewEmployeeRecord(urlString: String, parameter:[String:String]) {
@@ -27,7 +27,6 @@ class NewEmployeeViewModel: NSObject {
                         self.delegate?.didErrorDisplay()
                         return
                     }
-                   // self.listOfEmployees = response.status
                     self.delegate?.postRecordRespoce(msg:response.status)
                 }
                 
@@ -36,5 +35,5 @@ class NewEmployeeViewModel: NSObject {
             }
         })
     }
-
+    
 }
