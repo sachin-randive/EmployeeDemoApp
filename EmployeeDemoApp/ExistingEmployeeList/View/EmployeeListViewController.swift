@@ -92,17 +92,15 @@ extension EmployeeListViewController: UITableViewDataSource, UITableViewDelegate
 // MARK: - Protocal Delegate
 extension EmployeeListViewController: EmployeeViewModelProtocal {
     func deleteRecordRespoce(msg: String) {
-        print(msg)
+        self.alert(message: msg, title: "")
     }
     
     func didUpdateData() {
         tableviewOfEmployeeList.reloadData()
     }
     
-    func didErrorDisplay() {
-        let alert = UIAlertController(title: "Error", message: "Fail to load data from server. Please try after sometime.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    func didErrorDisplay() {  
+        self.alert(message:EEConstants.errorMessage, title: EEConstants.Error)
     }
 }
 
@@ -116,7 +114,7 @@ extension EmployeeListViewController: UISearchResultsUpdating {
 }
 extension EmployeeListViewController: AddNewEmployeeViewControllerProtocal {
     func didReloadTableData() {
-         model.getEmployeeList(urlString: EEAppConfig().employee)
+        model.getEmployeeList(urlString: EEAppConfig().employee)
     }
 }
 

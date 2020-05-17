@@ -41,30 +41,22 @@ class AddNewEmployeeViewController: UIViewController {
         employeeViewModel.postNewEmployeeRecord(urlString: EEAppConfig().AddNewEmployee, parameter: ["name":txtEmployeeName.text!,"salary":txtSalary.text!,"age":txtAge.text!])
     }
 }
+// MARK: -  NewEmployeeViewModel Protocal Delegate
 extension AddNewEmployeeViewController: NewEmployeeViewModelProtocal {
     func postRecordRespoce(msg: String) {
-        let alertController = UIAlertController(title: msg, message: "Record Added Successfully!!!", preferredStyle: .alert)
-        // Create the actions
-        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-            UIAlertAction in
+        self.popupAlert(title: msg, message:EEConstants.sucessMessage, actionTitles: ["OK"], actions:[{action1 in
             DispatchQueue.main.async {
                 self.addDelegate?.didReloadTableData()
                 self.navigationController?.popViewController(animated: true)
-            }
-        }
-        // Add the actions
-        alertController.addAction(okAction)
-        // Present the controller
-        self.present(alertController, animated: true, completion: nil)
+            } }, nil])
     }
     
     func didErrorDisplay() {
-        let alert = UIAlertController(title: "Error", message: "Fail to load data from server. Please try after sometime.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        self.alert(message:EEConstants.errorMessage, title: EEConstants.Error)
     }
 }
 
+// MARK: - TextField Delegate
 extension AddNewEmployeeViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // textField delegate method start from here
