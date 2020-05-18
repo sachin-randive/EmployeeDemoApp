@@ -59,4 +59,52 @@ class EmployeeDemoAppUITests: XCTestCase {
             XCTAssert(false, "Was not able to find any table cells")
         }
     }
+    
+    //MARK :- Create New Employee Page UI testing Start here.
+    func test_AddNewRecordPage_goesDashBoard() {
+        app.launch()
+        app.buttons["addButton"].tap()
+        let dashBoardView = app.otherElements["AddNewView_Dashboard"]
+        let dashBoardShown = dashBoardView.waitForExistence(timeout: 5)
+        XCTAssert(dashBoardShown)
+    }
+    
+    //MARK:- check textfiled Name
+    func testEmployeeNameTextfieldExists() {
+        app.launch()
+        app.buttons["addButton"].tap()
+        let textField = app.textFields["textfield--employeeName"]
+        textField.clearText(andReplaceWith: "new")
+        XCTAssertEqual(textField.value as! String, "new", "Text field value is not correct")
+    }
+    //MARK:- check textfiled Salary
+    func testSalaryField() {
+        app.launch()
+        app.buttons["addButton"].tap()
+        let salaryField = app.textFields["textfield--employeeSalary"]
+        salaryField.clearText(andReplaceWith: "12000")
+        XCTAssertEqual(salaryField.value as! String, "12000", "Text field value is not correct")
+    }
+}
+
+extension XCUIElement {
+    func clearText(andReplaceWith newText:String? = nil) {
+        tap()
+        press(forDuration: 1.0)
+        var select = XCUIApplication().menuItems["Select All"]
+        
+        if !select.exists {
+            select = XCUIApplication().menuItems["Select"]
+        }
+        //For empty fields there will be no "Select All", so we need to check
+        if select.waitForExistence(timeout: 0.5), select.exists {
+            select.tap()
+            typeText(String(XCUIKeyboardKey.delete.rawValue))
+        } else {
+            tap()
+        }
+        if let newVal = newText {
+            typeText(newVal)
+        }
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 class EmployeeListViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var tableviewOfEmployeeList: UITableView!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     //MARK: - Parameters
     fileprivate let model = EmployeeViewModel()
@@ -25,6 +26,7 @@ class EmployeeListViewController: UIViewController {
         model.getEmployeeList(urlString: EEAppConfig().employee)
         self.showSpinner(onView: self.view)
         tableviewOfEmployeeList.accessibilityIdentifier = "table--tableviewOfEmployeeList"
+        addButton.accessibilityIdentifier = "addButton"
         initialiseSearchController()
     }
     func initialiseSearchController() {
@@ -117,6 +119,7 @@ extension EmployeeListViewController: UISearchResultsUpdating {
         })
     }
 }
+// MARK: - AddNewEmployeeViewControllerProtocal Delegate - refresh after new employee record added
 extension EmployeeListViewController: AddNewEmployeeViewControllerProtocal {
     func didReloadTableData() {
         model.getEmployeeList(urlString: EEAppConfig().employee)

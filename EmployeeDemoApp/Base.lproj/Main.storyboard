@@ -145,6 +145,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="lPt-P3-p5a" id="RGd-IU-Vay"/>
                         <outlet property="tableviewOfEmployeeList" destination="uyW-lm-Xhw" id="QPh-rv-Law"/>
                     </connections>
                 </viewController>

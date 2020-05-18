@@ -25,6 +25,9 @@ class AddNewEmployeeViewController: UIViewController {
         super.viewDidLoad()
         btnSubmit.layer.cornerRadius = 10
         employeeViewModel.delegate = self
+        txtEmployeeName.accessibilityIdentifier = "textfield--employeeName"
+        txtSalary.accessibilityIdentifier = "textfield--employeeSalary"
+        view.accessibilityIdentifier = "AddNewView_Dashboard"
     }
     
     @IBAction func submitButtonAction() {
